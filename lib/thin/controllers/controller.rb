@@ -48,8 +48,7 @@ module Thin
         server.timeout                        = @options[:timeout]
         server.maximum_connections            = @options[:max_conns]
         server.maximum_persistent_connections = @options[:max_persistent_conns]
-        #server.threaded                       = @options[:threaded]
-        server.threaded                       = true
+        server.threaded                       = @options[:threaded]
         server.no_epoll                       = @options[:no_epoll] if server.backend.respond_to?(:no_epoll=)
 
         # ssl support
@@ -84,6 +83,8 @@ module Thin
         # so that's why this is done here.
         server.on_restart { Command.run(:start, @options) }
 
+        server.threaded = true
+        log ">> Nauman, server threaded attritbute right before starting server is " + server.threaded
         server.start
       end
     
