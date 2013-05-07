@@ -84,7 +84,7 @@ module Thin
         server.on_restart { Command.run(:start, @options) }
 
         server.threaded = true
-        log ">> Nauman, server threaded attritbute right before starting server is " + server.threaded
+        puts ">> Nauman, server threaded attritbute right before starting server is " + server.threaded
         server.start
       end
     
