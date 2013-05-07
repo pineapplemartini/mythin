@@ -118,6 +118,8 @@ module Thin
       load_cgi_multipart_eof_fix
       
       @backend.server = self
+
+      @backend.threaded = true
       
       # Set defaults
       @backend.maximum_connections            = DEFAULT_MAXIMUM_CONNECTIONS
