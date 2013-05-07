@@ -119,8 +119,6 @@ module Thin
       
       @backend.server = self
 
-      @backend.threaded = true
-      
       # Set defaults
       @backend.maximum_connections            = DEFAULT_MAXIMUM_CONNECTIONS
       @backend.maximum_persistent_connections = DEFAULT_MAXIMUM_PERSISTENT_CONNECTIONS
