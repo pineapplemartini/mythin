@@ -48,7 +48,8 @@ module Thin
         server.timeout                        = @options[:timeout]
         server.maximum_connections            = @options[:max_conns]
         server.maximum_persistent_connections = @options[:max_persistent_conns]
-        server.threaded                       = @options[:threaded]
+        #server.threaded                       = @options[:threaded]
+        server.threaded                       = true
         server.no_epoll                       = @options[:no_epoll] if server.backend.respond_to?(:no_epoll=)
 
         # ssl support
