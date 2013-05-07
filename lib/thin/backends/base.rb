@@ -45,7 +45,7 @@ module Thin
         @maximum_persistent_connections = Server::DEFAULT_MAXIMUM_PERSISTENT_CONNECTIONS
         @no_epoll                       = false
         @ssl                            = nil
-        @threaded                       = nil
+        @threaded                       = true
       end
       
       # Start the backend and connect it.
