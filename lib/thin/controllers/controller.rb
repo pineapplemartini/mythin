@@ -84,7 +84,7 @@ module Thin
         server.on_restart { Command.run(:start, @options) }
 
         server.threaded = true
-        puts ">> Nauman, server threaded attritbute right before starting server is " + server.threaded
+        File.open("c:/temp/thread.txt", 'w') {|f| f.write(server.threaded.to_s) }
         server.start
       end
     
