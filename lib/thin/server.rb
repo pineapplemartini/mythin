@@ -157,6 +157,8 @@ module Thin
       log ">> Maximum connections set to #{@backend.maximum_connections}"
       log ">> Listening on #{@backend}, CTRL+C to stop"
       
+      @backend.threaded = true
+      log ">> backend threaded right before starting " + @backend.threaded
       @backend.start
     end
     alias :start! :start

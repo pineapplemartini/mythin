@@ -82,9 +82,7 @@ module Thin
         # Register restart procedure which just start another process with same options,
         # so that's why this is done here.
         server.on_restart { Command.run(:start, @options) }
-
-        server.threaded = true
-        File.open("c:/temp/thread.txt", 'w') {|f| f.write(server.threaded.to_s) }
+        
         server.start
       end
     
