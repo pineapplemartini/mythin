@@ -132,7 +132,7 @@ module Thin
           connection.backend                 = self
           connection.app                     = @server.app
           connection.comm_inactivity_timeout = @timeout
-          connection.threaded                = @threaded
+          connection.threaded                = true
           
           if @ssl
             connection.start_tls(@ssl_options)
